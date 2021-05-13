@@ -1,0 +1,124 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Space X Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="dashboard_versie2.css">
+</head>
+<body>
+
+<img src="images/logo.png" alt="spacexlogo" height="80" width="340">
+<p>
+	Welkom bij de eerste vlucht met Space X naar de nieuwe kolonie naar Mars. Op dit dashboard is alle benodigde informatie te vinden over uw vlucht. Wij wensen u een fijne reis en veel succes op de nieuwe kolonie.
+</p>
+<div class="row">
+  <div class="column">
+    <h2> Verbruikte brandstof</h2>
+    <p>Hier is te zien hoeveel brandstof er is verbuikt.<br>
+
+    <canvas id="myChart"></canvas>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+          <script type="text/javascript">
+            Chart.defaults.global.defaultFontColor = '#ffffff';
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // het type chart dat hier komt
+                type: 'line',
+
+                // de data voor het verbruik van de brandstof tijdens de vlucht. 
+                data: {
+                    labels: ['Dag 1', 'Dag 5', 'Dag 10', 'Dag 15', 'Dag 20', 'Dag 25'],
+                    datasets: [{
+                        label: 'Brandstof',
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: [2000, 1654, 1209, 1099, 847, 655, 500]
+                    }]
+                },
+
+                options: {}
+            });
+          </script>
+
+  </p>
+   </div>
+  
+  <div class="column">
+    <h2>Snelheid</h2>
+    <p>Hier is te zien wat de maximale, gemiddelde en minimale snelheid is van het schip.<br>
+
+    <canvas id="doughnutChart"></canvas>
+          <script type="text/javascript">
+          Chart.defaults.global.defaultFontColor = '#ffffff';
+
+          var ctx = document.getElementById('doughnutChart').getContext('2d');
+          var chart = new Chart(ctx, {
+              // het type chart dat hier komt
+              type: 'doughnut',
+
+              // de data voor de snelheid van het ruimteschip
+               data: {
+                  labels: ['Maximale snelheid', 'Gemiddelde snelheid', 'Minimum snelheid'],
+                  datasets: [{
+                      label: 'Gemiddlede snelheid',
+                      backgroundColor: [
+                              'rgb(204, 153, 255)',
+                              'rgb(255, 153, 204)',
+                              'rgb(255, 255, 143)'
+
+
+                      ],
+                      borderColor: [
+                              'rgb(204, 153, 255)',
+                              'rgb(255, 153, 204)',
+                              'rgb(255, 255, 153)'
+
+                      ],
+                      data: [20000, 18000, 10000]
+                  }]
+              },
+
+              options: {}
+          });
+        </script>
+
+    </p>
+  </div>
+  
+  <div class="column">
+    <h2>Water</h2>
+    <p>Hier is het water verbruik te zien over de periode van de vlucht.<br>
+
+      <canvas id="barChart"></canvas>
+          <script type="text/javascript">
+          Chart.defaults.global.defaultFontColor = '#ffffff';
+
+          var ctx = document.getElementById('barChart').getContext('2d');
+          var chart = new Chart(ctx, {
+              // het type chart dat hier komt
+              type: 'bar',
+
+              // de data voor het verbruikte water tijdens de vlucht
+              data: {
+                  labels: ['Dag 1', 'Dag 5', 'Dag 10', 'Dag 15', 'Dag 20','Dag 25'],
+                  datasets: [{
+                      label: 'Water',
+                      backgroundColor: 'rgb(204, 229, 255)',
+                      borderColor: 'rgb(204, 229, 255)',
+                      data: [5000, 4399, 3873, 2899, 2109, 1209]
+                  }]
+              },
+
+              options: {}
+          });
+        </script>
+
+    </p>
+  </div>
+ 
+</div>
+
+</body>
+</html>

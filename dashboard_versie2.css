@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+body{
+  font-family: 'Montserrat', sans serif;
+  margin: 10px;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+}
+
+/*hoe de dashboard wordt vormgegeven*/
+.column {
+  float: left;
+  width: 33%;
+  padding: 20px;
+}
+/*hoe de dashboard wordt vormgegeven*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*Bij een schermgrote van 1200px, wordt de dashboard naast elkaar getoont*/
+@media screen and (min-width: 1200px) {
+  .column {
+    width: 30%;
+  }
+}
+
+/*Bij een schermgrote van 992px, wordt de dashboard onder elkaar getoont*/
+@media screen and (max-width: 992px) {
+  .column {
+    width: 80%;
+  }
+}
+
+/*Bij een schermgrote van 600px, wordt de dashboard onder elkaar getoont*/
+@media screen and (max-width: 600px) {
+  .column {
+    width: 70%;
+    padding: 35px;
+  }
+}
